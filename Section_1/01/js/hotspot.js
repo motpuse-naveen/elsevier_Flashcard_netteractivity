@@ -66,6 +66,8 @@ var hotspot = function(data){
 			jqnc(loadingDiv).remove()
 			jqnc(data).css('visibility','visible')
 		},100);
+
+		updateAriaAttributes();
 		
 	}	
 
@@ -257,4 +259,15 @@ var hotspot = function(data){
 	jqnc(window).resize(function(){
 		//setParameters();
 	});
+
+	function updateAriaAttributes(){
+		const elm_htspots = document.querySelectorAll("#zoomContainer .hotspot div");
+		const elm_htspotslbls = document.querySelectorAll("#zoomContainer .labelsdata div");
+		elm_htspots.forEach(elmht => {
+			elmht.setAttribute("role", "button");
+		});
+		elm_htspotslbls.forEach(elmhtlbl => {
+			elmhtlbl.setAttribute("aria-live", "assertive");
+		});
+	}
 }

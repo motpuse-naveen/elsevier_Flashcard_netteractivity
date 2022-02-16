@@ -14,6 +14,7 @@ function onCommentClicked(e)
 	//if(!isCommentOpen){
 		jqnc('.h-hotspot').find('.modalbg').addClass('modalbgAnimate')
 		jqnc('.h-hotspot').find('.openModal').css('pointer-events','auto')
+		jqnc('.h-hotspot').find('.modalbg').attr('aria-hidden', 'false');
 		setTimeout(function () {
 			jqnc('#dialogTitle').focus();
 		},500);	
@@ -29,6 +30,7 @@ function onCommentCloseClicked(e)
 	isCommentOpen = true;
 	jqnc('.h-hotspot').find('.modalbg').removeClass('modalbgAnimate');
 	jqnc('.h-hotspot').find('.openModal').css('pointer-events','none');
+	jqnc('.h-hotspot').find('.modalbg').attr('aria-hidden', 'true');
 	setTimeout(function () {
 		jqnc('.h-hotspot').find('.commentButton').focus();
 	},500);
