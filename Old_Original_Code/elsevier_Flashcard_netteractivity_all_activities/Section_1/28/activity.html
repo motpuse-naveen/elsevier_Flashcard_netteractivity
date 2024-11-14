@@ -1,0 +1,82 @@
+<html>
+<head>
+    <title>Tongue</title>
+    <link rel="stylesheet" href="style/jquery-ui.css"/>
+    <link rel="stylesheet" href="style/hotspot.css"/>
+    <!-- <link rel="stylesheet" href="style/style.css"/> -->
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/iscroll-zoom.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="js/widgetinit.js"></script>
+    <script type="text/javascript" src="js/hotspot.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+<body style="margin:0px;">
+    <div class="w-hotspot">
+        <div id="zoomWrapper" class="zoomWrapper">
+            <!-- <div class="dots" style="display:block; position:absolute;left:53px;top:0px;z-index: 1;pointer-events:none;"><img src="images/dots.png"></div> -->
+            <div id="scroller" >                
+                <img class="w-hotspot-img" src="images/base_bw.png" alt="Head and Neck"/>
+                <div class="imageContainer" style="margin-top:50px;">
+                <div id="zoomContainer" >   
+
+                        <div class="imagehighlights">
+                            <div id="bwimg" aria-label="Tongue" data-img-src='images/base_bw.png' data-id='bw' style='background-image:url("images/base_bw.png")'></div>
+                            <div id="colorimg" aria-label="Tongue" tabindex="0" data-img-src='images/base_color.png' data-id='color' style='background-image:url("images/base_color.png")'></div>
+                             <div tabindex="0" data-img-src='images/1.png' data-id='1' style='background-image:url("images/1.png")' aria-label="Styloglossus muscle"></div>
+                             <div tabindex="0" data-img-src='images/2.png' data-id='2' style='background-image:url("images/2.png")' aria-label="Palatoglossus muscle (cut)"></div>
+                             <div tabindex="0" data-img-src='images/3.png' data-id='3' style='background-image:url("images/3.png")' aria-label="Lingual nerve"></div>
+                             <div tabindex="0" data-img-src='images/4.png' data-id='4' style='background-image:url("images/4.png")' aria-label="Submandibular ganglion"></div>
+                             <div tabindex="0" data-img-src='images/5.png' data-id='5' style='background-image:url("images/5.png")' aria-label="Submandibular duct"></div>
+                             <div tabindex="0" data-img-src='images/6.png' data-id='6' style='background-image:url("images/6.png")' aria-label="Genioglossus muscle"></div>
+                             <div tabindex="0" data-img-src='images/7.png' data-id='7' style='background-image:url("images/7.png")' aria-label="Geniohyoid muscle"></div>
+                             <div tabindex="0" data-img-src='images/8.png' data-id='8' style='background-image:url("images/8.png")' aria-label="Hypoglossal nerve (CN XII)"></div>
+                             <div tabindex="0" data-img-src='images/9.png' data-id='9' style='background-image:url("images/9.png")' aria-label="Lingual vein"></div>
+                             <div tabindex="0" data-img-src='images/10.png' data-id='10' style='background-image:url("images/10.png")' aria-label="Internal jugular vein"></div>
+                             <div tabindex="0" data-img-src='images/11.png' data-id='11' style='background-image:url("images/11.png")' aria-label="External carotid artery"></div>
+                             <div tabindex="0" data-img-src='images/12.png' data-id='12' style='background-image:url("images/12.png")' aria-label="Lingual artery"></div>
+                             
+                            <div data-img-src='images/lines.png' data-id='lines' style='background-image:url("images/lines.png")'></div>
+                            </div>
+                        <div class="labelsdata">
+                            <div id='popup_text_1' class="hotspot_popup" style="top: 157px; left: 483px; width: 100px;">Styloglossus muscle</div>
+                            <div id='popup_text_2' class="hotspot_popup" style="top: 93px; left: 280px;">Palatoglossus muscle <i>(cut)</i></div>
+                            <div id='popup_text_3' class="hotspot_popup" style="top: 110px; left: 175px;">Lingual nerve</div>
+                            <div id='popup_text_4' class="hotspot_popup" style="top: 100px; left: 103px;">Submandibular ganglion</div>
+                            <div id='popup_text_5' class="hotspot_popup" style="top: 176px; left: -24px; width: 120px;">Submandibular duct</div>
+                            <div id='popup_text_6' class="hotspot_popup" style="top: 544px; left: -18px;">Genioglossus muscle</div>
+                            <div id='popup_text_7' class="hotspot_popup" style="top: 565px; left: 55px;">Geniohyoid muscle</div>
+                            <div id='popup_text_8' class="hotspot_popup" style="top: 564px; left: 183px;">Hypoglossal nerve (CN XII)</div>
+                            <div id='popup_text_9' class="hotspot_popup" style="top: 565px; left: 300px;">Lingual vein</div>
+                            <div id='popup_text_10' class="hotspot_popup" style="top: 374px; left: 510px; width: 90px;">Internal jugular vein</div>
+                            <div id='popup_text_11' class="hotspot_popup" style="top: 256px; left: 532px; width: 60px;">External carotid artery</div>
+                            <div id='popup_text_12' class="hotspot_popup" style="top: 243px; left: 472px;">Lingual artery</div>
+                            
+                        </div>
+                        <div class="hotspot">
+                             <div tabindex="0" id="hotspot_1" class="notselected" data-id='1' data-align="Right" data-popup="Styloglossus muscle" style="position:absolute;left: 499px;top: 205px;">1</div>
+                             <div tabindex="0" id="hotspot_2" class="notselected" data-id='2' data-align="Left" data-popup="Palatoglossus muscle (cut)" style="position:absolute;left: 273px;top: 137px;">2</div>
+                             <div tabindex="0" id="hotspot_3" class="notselected" data-id='3' data-align="Left" data-popup="Lingual nerve" style="position:absolute;left: 202px;top: 137px;">3</div>
+                             <div tabindex="0" id="hotspot_4" class="notselected" data-id='4' data-align="Left" data-popup="Submandibular ganglion" style="position:absolute;left: 140px;top: 144px;">4</div>
+                             <div tabindex="0" id="hotspot_5" class="notselected" data-id='5' data-align="Left" data-popup="Submandibular duct" style="position:absolute;left: 21px;top: 213px;">5</div>
+                             <div tabindex="0" id="hotspot_6" class="notselected" data-id='6' data-align="Left" data-popup="Genioglossus muscle" style="position:absolute;left: 36px;top: 507px;">6</div>
+                             <div tabindex="0" id="hotspot_7" class="notselected" data-id='7' data-align="Right" data-popup="Geniohyoid muscle" style="position:absolute;left: 94px;top: 528px;">7</div>
+                             <div tabindex="0" id="hotspot_8" class="notselected" data-id='8' data-align="Right" data-popup="Hypoglossal nerve (CN XII)" style="position:absolute;left: 221px;top: 531px;">8</div>
+                             <div tabindex="0" id="hotspot_9" class="notselected" data-id='9' data-align="Right" data-popup="Lingual vein" style="position:absolute;left: 329px;top: 530px;">9</div>
+                             <div tabindex="0" id="hotspot_10" class="notselected" data-id='10' data-align="Right" data-popup="Internal jugular vein" style="position:absolute;left: 522px;top: 340px;">10</div>
+                             <div tabindex="0" id="hotspot_11" class="notselected" data-id='11' data-align="Right" data-popup="External carotid artery" style="position:absolute;left: 508px;top: 307px;">11</div>
+                             <div tabindex="0" id="hotspot_12" class="notselected" data-id='12' data-align="Right" data-popup="Lingual artery" style="position:absolute;left: 489px;top: 267px;">12</div>
+                             
+                        </div>
+                </div>
+            </div>          
+        </div>          
+        </div>  
+    </div>  
+
+                </body>
+                </html>    
+            
+
+            
