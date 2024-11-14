@@ -168,9 +168,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
 .h-hotspot .titleContainer{
 	position: absolute;
   font-weight: 600;
-  top: -34px;
-  left:60px;
+  /*top: -34px;
+  left:60px;*/
   font-size: 1.5em;
+  padding: 10px 5px;
 }
 .h-hotspot .modalbg .dialog .ie7 {
   filter: progid:DXImageTransform.Microsoft.Shadow(color='#000', Direction=135, Strength=3);
