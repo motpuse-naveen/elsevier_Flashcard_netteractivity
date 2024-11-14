@@ -6,6 +6,12 @@ jqnc(document).ready(function(){
 	});
 	setFrameSize();*/
 });
+
+$(document).keydown(function(event) { 
+	if (event.keyCode == 27) { 
+	  $('#modal_id').hide();
+	}
+  });
 var isCommentOpen = false;
 function onCommentClicked(e)
 {		

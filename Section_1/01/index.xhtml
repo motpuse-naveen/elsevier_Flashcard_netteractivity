@@ -12,8 +12,8 @@
 <body class="vst-click vst-draggable">
 	<div class='h-hotspot'>			
 		<div style="margin-top:50px">				  
-		<div class="titleContainer" tabindex="0"> Skull: Anterior View </div>
-		<div class="button commentButton" tabindex="0" title="Commentary"> Commentary </div>
+		<h1 class="titleContainer" tabindex="0"> Skull: Anterior View </h1>
+		<button class="button commentButton" tabindex="0" title="Commentary"> Commentary </button>
 		<iframe id='mainframe' src="activityframe.html" scrolling="no" allowFullScreen="true" frameborder="0"></iframe>		
 		
 		<!--<div class="slider">
@@ -23,10 +23,10 @@
 	    </div>-->
 
 		<div class="modalbg openModal">
-		  <div class="dialog">
+		  <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog_heading">
 			
-			<h2 tabindex="0">Skull: Anterior View</h2>
-			<div title="Close" tabindex="0" class="close">X</div>
+			<h2 id="dialog_heading" tabindex="0">Skull: Anterior View</h2>
+			<button title="Close" tabindex="0" class="close">X</button>
 			<hr/>
 			<div class="dialog_body" tabindex="0">			
 			<p >

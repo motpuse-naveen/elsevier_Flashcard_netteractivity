@@ -197,22 +197,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
   -transition-delay: 0.1s;
 }
 .h-hotspot .close {
-  background: #606061;
+  background: #333333;
   color: #FFFFFF;
   line-height: 25px;
   position: absolute;
   right: -12px;
   text-align: center;
   top: -10px;
-  width: 24px;
+  width: 30px;
+  height: 30px;
   text-decoration: none;
   font-weight: bold;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px #000;
+  border: 2px solid #333333;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  /*box-shadow: 0 0 10px #000;
   -moz-box-shadow: 0 0 10px #000;
-  -webkit-box-shadow: 0 0 10px #000;
+  -webkit-box-shadow: 0 0 10px #000;*/
   -moz-transition: all 0.1s ease-out;
   -webkit-transition: all 0.1s ease-out;
   -o-transition: all 0.1s ease-out;
@@ -226,12 +228,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
   filter: progid:DXImageTransform.Microsoft.Shadow(color='#000', Direction=135, Strength=3);
 }
 .h-hotspot .close:hover {
-  background: #00d9ff;
+  background: #027DB6;
   -moz-transition: all 0.5s ease-out;
   -webkit-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
   cursor: pointer;
+  border: 2px solid #016F9B;
 }
 .h-hotspot .fineprint {
   font-style: italic;
@@ -241,9 +244,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
 
 .h-hotspot .button {
 	font-size: 17px;
-	background:#FF8200;	
+	background:#027DB6;	
 	width:115px;
-	color:#02142b;
+	color:#FFFFFF;
   margin: 0px;
   font-size: 20px;
   font-family: 'Arial';
@@ -253,6 +256,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
   padding: 5px 21px 5px;
   position: relative;
   margin: 5px 0px;
+  border: 2px solid #016F9B;
   left: 66.5%;
   box-shadow: 1px 1px 1px #fff;
   -moz-box-shadow: 1px 1px 1px #fff;
@@ -262,7 +266,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
     border-radius: 5px;
   text-align: center;
 }
-
+.h-hotspot .button:hover{
+  background:#016F9B;	
+}
  .h-hotspot .hotspot_popup{
     width: 150px;
     position: absolute;
@@ -270,6 +276,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
  }
 #nomargin{
   margin: -10px 0px 0px -10px;
+}
+
+:focus-visible{
+outline: 2px solid #EB6500;
 }
 
 @media (max-width: 915px){
