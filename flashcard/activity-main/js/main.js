@@ -7,14 +7,20 @@ jqnc(document).ready(function(){
 	setFrameSize();*/
 });
 
-$(document).keydown(function(event) { 
+jqnc(document).keydown(function(event) { 
 	if (event.keyCode == 27) { 
-	  $('#modal_id').hide();
+		//isCommentOpen = true;
+		jqnc('.h-hotspot').find('.modalbg').removeClass('modalbgAnimate');
+		jqnc('.h-hotspot').find('.openModal').css('pointer-events','none');
+		jqnc('.h-hotspot').find('.modalbg').attr('aria-hidden', 'true');
+		setTimeout(function () {
+			jqnc('.h-hotspot').find('.commentButton').focus();
+		},200);
 	}
   });
 var isCommentOpen = false;
 function onCommentClicked(e)
-{		
+{
 	if(e.type == 'keyup' && (e.keyCode != 13))
 		return false;
 	//if(!isCommentOpen){
@@ -23,7 +29,7 @@ function onCommentClicked(e)
 		jqnc('.h-hotspot').find('.modalbg').attr('aria-hidden', 'false');
 		setTimeout(function () {
 			jqnc('#dialogTitle').focus();
-		},500);	
+		},300);	
 	//}
 	//isCommentOpen = false;
 }
@@ -31,15 +37,15 @@ function onCommentClicked(e)
 function onCommentCloseClicked(e)
 {	
 	restrictTab(e);
-	if(e.type == 'keydown' && (e.keyCode != 13))
+	if(e.type == 'keydown' && (e.keyCode != 13) && (e.keyCode != 27))
 		return false;
-	isCommentOpen = true;
+	//isCommentOpen = true;
 	jqnc('.h-hotspot').find('.modalbg').removeClass('modalbgAnimate');
 	jqnc('.h-hotspot').find('.openModal').css('pointer-events','none');
 	jqnc('.h-hotspot').find('.modalbg').attr('aria-hidden', 'true');
 	setTimeout(function () {
 		jqnc('.h-hotspot').find('.commentButton').focus();
-	},500);
+	},300);
 }
 
 function restrictTab(e) {

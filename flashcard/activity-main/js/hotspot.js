@@ -162,7 +162,7 @@ var hotspot = function(data){
 
 	function onCommentCloseClicked(e)
 	{
-		if(e.type == 'keyup' && (e.keyCode != 13))
+		if(e.type == 'keyup' && (e.keyCode != 13) && (e.keyCode != 27))
 			return false;
 		jqnc(data).find('.modalbg').removeClass('modalbgAnimate')
 		jqnc(data).find('.openModal').css('pointer-events','none')
@@ -188,8 +188,9 @@ var hotspot = function(data){
 				jqnc(this).hide();
 			}
 		})
-		jqnc(data).find('.hotspot > div').removeClass('selected')
-		jqnc(data).find('.hotspot > div').addClass('notselected')
+		console.log("remove selected 1");
+		jqnc(data).find('.hotspot > div').removeClass('selected');
+		jqnc(data).find('.hotspot > div').addClass('notselected').attr("aria-selected",false).attr("aria-expanded", false);
 	}
 	function showSelectedHigh(num)
 	{
@@ -211,6 +212,7 @@ var hotspot = function(data){
 	}
 	function onHotSpotClicked(e)
 	{
+		debugger;
 		if(e.type == 'keyup' && (e.keyCode != 13))
 			return false;
 		lastFocus = jqnc(this);
@@ -219,7 +221,7 @@ var hotspot = function(data){
 		hideAllHighlights()
 		showSelectedHigh(jqnc(e.target).html());
 		jqnc(e.target).find('.hotspot > div').addClass('notselected')
-		jqnc(e.target).addClass('selected')
+		jqnc(e.target).addClass('selected').attr("aria-expanded",true).attr("aria-selected", true)
 		jqnc(data).find('.hotspot_popup').hide();
 		jqnc('#popup_text_'+jqnc(e.target).attr('data-id')).show();
 		////showText(jqnc(e.target).attr('data-popup'),jqnc(e.target).position(),jqnc(e.target).attr('data-align'), jqnc(e.target))

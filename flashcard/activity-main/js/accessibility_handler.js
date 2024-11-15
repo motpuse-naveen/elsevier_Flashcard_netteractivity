@@ -9,7 +9,6 @@ const elm_commentBtn = document.querySelector(".commentButton");
 const elm_dialogModalbg = document.querySelector(".modalbg")
 
 //Add title to document
-debugger;
 const elm_title = document.createElement("title");
 const elm_titleTxt = document.createTextNode(elm_titleCont.textContent.trim());
 elm_title.appendChild(elm_titleTxt);
