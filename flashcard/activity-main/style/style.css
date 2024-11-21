@@ -164,6 +164,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
   max-height: 500px;
   overflow: auto;
 }
+.title-wrap{
+  display: block;
+  position: relative;
+  height: 40px;
+}
 
 .h-hotspot .titleContainer{
 	position: absolute;
@@ -171,7 +176,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
   /*top: -34px;
   left:60px;*/
   font-size: 1.5em;
-  padding: 10px 5px;
+  /*padding: 10px 5px;*/
+  margin: 6px;
 }
 .h-hotspot .modalbg .dialog .ie7 {
   filter: progid:DXImageTransform.Microsoft.Shadow(color='#000', Direction=135, Strength=3);
@@ -245,7 +251,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
 .h-hotspot .button {
 	font-size: 17px;
 	background:#027DB6;	
-	width:115px;
+	width: 125px;
 	color:#FFFFFF;
   margin: 0px;
   font-size: 20px;
@@ -254,10 +260,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
   font-weight: 200;
   cursor: pointer;
   padding: 5px 21px 5px;
-  position: relative;
+  position: absolute;
   margin: 5px 0px;
   border: 2px solid #016F9B;
-  left: 66.5%;
+  right: 0;
   box-shadow: 1px 1px 1px #fff;
   -moz-box-shadow: 1px 1px 1px #fff;
   -webkit-box-shadow: 1px 1px 1px #fff;
@@ -283,17 +289,19 @@ outline: 2px solid #EB6500;
 }
 
 @media (max-width: 915px){
-  .h-hotspot .titleContainer {
+  /*.h-hotspot .titleContainer {
     top: -52px;
     left: 4px;
-  }
+  }*/
   #mainframe {
     width: 480px;
     height: 380px;
   }
+  /*
   .h-hotspot .button {
     left: 20%;
   }
+  */
   html, body {
     height: 80%;
   }
@@ -325,12 +333,14 @@ outline: 2px solid #EB6500;
   .h-hotspot .modalbg .dialog_body {
     max-height: 190px;
   }
+  /*
   .h-hotspot .button {   
       left: 73.5%;
   }
-  .h-hotspot .titleContainer {   
+  */
+  /*.h-hotspot .titleContainer {   
     left: 10%;
-  }
+  }*/
 }
 
 @media (max-width: 510px){
@@ -341,7 +351,7 @@ outline: 2px solid #EB6500;
   .h-hotspot .button { 
     padding: 5px;
     font-size: 18px;
-    left: 78%;
+    /*left: 78%;*/
   }
   .h-hotspot
   {
@@ -353,24 +363,26 @@ outline: 2px solid #EB6500;
   #firstname { 
     background-color: yellow;
   }
-  .h-hotspot .titleContainer {    
+  /*.h-hotspot .titleContainer {    
     top: -37px;
     left: 26px;
-  }
+  }*/
 }
 
 @media (max-width: 390px){
-  .h-hotspot .titleContainer {
+  /*.h-hotspot .titleContainer {
     top: -52px;
     left: 4px;
-  }
+  }*/
   #mainframe {
     width: 368px;
     height: 422px;
   }
+  /*
   .h-hotspot .button {
     left: 71%;
   }
+  */
   .h-hotspot .modalbgAnimate .dialog{
     top: 0px;
     margin-top: 15px;
@@ -395,7 +407,7 @@ outline: 2px solid #EB6500;
     margin-top: 9px;
   } 
   .h-hotspot .button{
-    left: 62%;
+    /*left: 62%;*/
     font-size: 15px;
     bottom: 5px;
   }  
@@ -416,10 +428,10 @@ outline: 2px solid #EB6500;
   {
     height: 100%;
   }
-  .h-hotspot .titleContainer {
+  /*.h-hotspot .titleContainer {
     font-size: 15px;
     width: 270px;
-  }
+  }*/
 
   #mainframe{
     width: 290px;
@@ -429,7 +441,7 @@ outline: 2px solid #EB6500;
   .h-hotspot .button { 
     padding: 5px;
     font-size: 15px;
-    left: 62%;
+    /*left: 62%;*/
   }
 }
 
@@ -440,10 +452,10 @@ outline: 2px solid #EB6500;
   {
     height: 100%;
   }
-  .h-hotspot .titleContainer {
+  /*.h-hotspot .titleContainer {
     font-size: 15px;
     width: 270px;
-  }
+  }*/
 
   #mainframe{
     width: 350px;
@@ -454,7 +466,7 @@ outline: 2px solid #EB6500;
   .h-hotspot .button { 
     padding: 5px;
     font-size: 15px;
-    left: 74%;
+    /*left: 74%;*/
   }
       
 }
@@ -467,12 +479,14 @@ outline: 2px solid #EB6500;
     height: 100%;
   }  
 
+  /*
   .h-hotspot .titleContainer {
     font-size: 18px;
     top: -40px;
     left: 3px;
     width: 360px;
   }
+  */
 
   #mainframe{
     width: 380px;
@@ -483,7 +497,7 @@ outline: 2px solid #EB6500;
   .h-hotspot .button { 
     padding: 5px;
     font-size: 18px;
-    left: 24%;
+    /*left: 24%;*/
   }
 }
 
@@ -499,13 +513,13 @@ outline: 2px solid #EB6500;
     position: absolute;
     width: 100%;
     font-weight: 600;
-    top: -34px;
-    left:60px;
+    /*top: -34px;
+    left:60px;*/
     font-size: 20px;
   }
   .h-hotspot .button { 
     padding: 5px;
     font-size: 20px;
-    left: 66%
+    /*left: 66%*/
   }
 }
