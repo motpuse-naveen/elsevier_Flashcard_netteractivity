@@ -10,7 +10,7 @@ html, body {
 
 #mainframe {
   width: 100% !important;
-  height: 100% !important;
+  /*height: 100% !important;*/
 }
 
 .h-hotspot > div {
@@ -166,8 +166,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
 }
 .title-wrap{
   display: block;
+  display: flex;
   position: relative;
   height: 40px;
+  align-items: center;
+  position: relative;
+  height: 50px;
 }
 
 .h-hotspot .titleContainer{
@@ -251,7 +255,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
 .h-hotspot .button {
 	font-size: 17px;
 	background:#027DB6;	
-	width: 125px;
+	/*width: 125px;*/
 	color:#FFFFFF;
   margin: 0px;
   font-size: 20px;
@@ -259,7 +263,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
   text-decoration: none;
   font-weight: 200;
   cursor: pointer;
-  padding: 5px 21px 5px;
+  padding: 5px 15px;
   position: absolute;
   margin: 5px 0px;
   border: 2px solid #016F9B;
@@ -349,7 +353,6 @@ outline: 2px solid #EB6500;
     height: 553px;
   }
   .h-hotspot .button { 
-    padding: 5px;
     font-size: 18px;
     /*left: 78%;*/
   }
@@ -439,7 +442,6 @@ outline: 2px solid #EB6500;
     margin-top: 20px;
   }
   .h-hotspot .button { 
-    padding: 5px;
     font-size: 15px;
     /*left: 62%;*/
   }
@@ -464,7 +466,6 @@ outline: 2px solid #EB6500;
   }
 
   .h-hotspot .button { 
-    padding: 5px;
     font-size: 15px;
     /*left: 74%;*/
   }
@@ -495,7 +496,6 @@ outline: 2px solid #EB6500;
   }
 
   .h-hotspot .button { 
-    padding: 5px;
     font-size: 18px;
     /*left: 24%;*/
   }
@@ -518,7 +518,6 @@ outline: 2px solid #EB6500;
     font-size: 20px;
   }
   .h-hotspot .button { 
-    padding: 5px;
     font-size: 20px;
     /*left: 66%*/
   }

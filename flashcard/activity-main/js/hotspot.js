@@ -93,7 +93,8 @@ var hotspot = function(data){
 		}
 		altTextStr = altTextStr.replace("-imgtitle-", document.title);
 		altTextStr = altTextStr.replace("-listlabels-", listStr);
-		jqnc(".w-hotspot-img").attr("alt", altTextStr);
+		//jqnc(".w-hotspot-img").attr("alt", altTextStr);
+		//jqnc("#colorimg").attr("alt", altTextStr);
 	}
 
 	
@@ -139,8 +140,12 @@ var hotspot = function(data){
 	function addButtonEvents()
 	{
 		jqnc(data).find('.hotspot > div').bind('click keyup touchstart',onHotSpotClicked);	
+		jqnc(data).find('.hotspot > button').bind('click touchstart',onHotSpotClicked);	
 
 		jqnc(data).find('.hotspot > div').each(function(){
+			jqnc(this).attr('aria-label', jqnc(this).attr('data-popup'));
+		});
+		jqnc(data).find('.hotspot > button').each(function(){
 			jqnc(this).attr('aria-label', jqnc(this).attr('data-popup'));
 		});
 		jqnc(data).find('.commentButton').bind('click keyup touchstart',onCommentClicked);
@@ -154,7 +159,7 @@ var hotspot = function(data){
 		jqnc(data).find('.modalbg').addClass('modalbgAnimate');
 		jqnc(data).find('.openModal').css('pointer-events','auto');
 		setTimeout(function () {
-			jqnc(data).find('#dialogTitle').focus();
+			jqnc(data).find('#dialogClose').focus();
 			console.log('focus set')
 		},1000);
 	}
@@ -190,8 +195,12 @@ var hotspot = function(data){
 		})
 		console.log("remove selected 1");
 		jqnc(data).find('.hotspot > div').removeClass('selected');
-		//jqnc(data).find('.hotspot > div').addClass('notselected').attr("aria-selected",false).attr("aria-expanded", false);
-		jqnc(data).find('.hotspot > div').addClass('notselected').attr("aria-selected",false);
+		//jqnc(data).find('.hotspot > div').addClass('notselected').attr("aria-pressed",false).attr("aria-expanded", false);
+		jqnc(data).find('.hotspot > div').addClass('notselected').attr("aria-pressed",false);
+
+		jqnc(data).find('.hotspot > button').removeClass('selected');
+		//jqnc(data).find('.hotspot > div').addClass('notselected').attr("aria-pressed",false).attr("aria-expanded", false);
+		jqnc(data).find('.hotspot > button').addClass('notselected').attr("aria-pressed",false);
 	}
 	function showSelectedHigh(num)
 	{
@@ -218,16 +227,20 @@ var hotspot = function(data){
 		lastFocus = jqnc(this);
 		console.log('lastFocus', lastFocus)
 
-		hideAllHighlights()
-		showSelectedHigh(jqnc(e.target).html());
-		jqnc(e.target).find('.hotspot > div').addClass('notselected')
-		//jqnc(e.target).addClass('selected').attr("aria-expanded",true).attr("aria-selected", true)
-		jqnc(e.target).addClass('selected').attr("aria-selected", true)
-		jqnc(data).find('.hotspot_popup').hide();
-		jqnc('#popup_text_'+jqnc(e.target).attr('data-id')).show();
-		////showText(jqnc(e.target).attr('data-popup'),jqnc(e.target).position(),jqnc(e.target).attr('data-align'), jqnc(e.target))
-	/*	var hPopup = jqnc(txtdata).detach();
-		jqnc(data).find('.imageContainer').append(hPopup);*/
+		if(!jqnc(e.target).hasClass("selected")){
+			hideAllHighlights()
+			showSelectedHigh(jqnc(e.target).html());
+			jqnc(e.target).find('.hotspot > div').addClass('notselected')
+			jqnc(e.target).find('.hotspot > button').addClass('notselected')
+			//jqnc(e.target).addClass('selected').attr("aria-expanded",true).attr("aria-pressed", true)
+			jqnc(e.target).addClass('selected').attr("aria-pressed", true)
+			jqnc(data).find('.hotspot_popup').hide().attr("aria-hidden","true");
+			jqnc('#popup_text_'+jqnc(e.target).attr('data-id')).show().attr("aria-hidden","false");
+		}
+		else{
+			hideAllHighlights()
+			jqnc(data).find('.hotspot_popup').hide().attr("aria-hidden","true");
+		}
 	}
 
     function setParameters(){

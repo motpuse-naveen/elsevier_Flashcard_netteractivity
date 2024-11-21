@@ -28,7 +28,7 @@ function onCommentClicked(e)
 		jqnc('.h-hotspot').find('.openModal').css('pointer-events','auto')
 		jqnc('.h-hotspot').find('.modalbg').attr('aria-hidden', 'false');
 		setTimeout(function () {
-			jqnc('#dialogTitle').focus();
+			jqnc('#dialogClose').focus();
 		},300);	
 	//}
 	//isCommentOpen = false;
@@ -51,7 +51,7 @@ function onCommentCloseClicked(e)
 function restrictTab(e) {
     if (e.type === 'keydown' && (e.keyCode === 9)) {
         e.preventDefault();
-        jqnc('#dialogTitle').focus();
+        jqnc('#dialogClose').focus();
     }
 }
 
