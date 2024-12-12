@@ -272,6 +272,31 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
   outline: 2px solid #EB6500;
   }
 
+  .sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important; /* 2 */
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important; /* 3 */
+  }
+  .sr-only {
+    position: absolute; /* Take out of normal document flow */
+    width: 1px; /* Collapse width */
+    height: 1px; /* Collapse height */
+    padding: 0; /* Remove any padding */
+    margin: -1px; /* Remove from visible space */
+    overflow: hidden; /* Hide overflowing content */
+    clip: rect(0, 0, 0, 0); /* Clip to an invisible rectangle */
+    white-space: nowrap; /* Prevent text wrapping */
+    border: 0; /* Remove borders */
+  }
+
 @media only screen and (max-width: 320px) {
  .w-hotspot .w-hotspot-img{
     width:90%;

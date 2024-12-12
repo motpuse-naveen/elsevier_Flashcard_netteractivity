@@ -93,7 +93,7 @@ var hotspot = function(data){
 		}
 		altTextStr = altTextStr.replace("-imgtitle-", document.title);
 		altTextStr = altTextStr.replace("-listlabels-", listStr);
-		//jqnc(".w-hotspot-img").attr("alt", altTextStr);
+		jqnc(".w-hotspot-img").attr("alt", altTextStr);
 		//jqnc("#colorimg").attr("alt", altTextStr);
 	}
 
