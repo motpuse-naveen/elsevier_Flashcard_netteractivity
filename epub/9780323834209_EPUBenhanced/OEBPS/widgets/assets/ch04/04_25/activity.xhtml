@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="EN" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+<head>
+<title>Surfaces of Liver</title>
+    <link rel="stylesheet" href="style/jquery-ui.css"/>
+    <link rel="stylesheet" href="style/hotspot.css"/>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/iscroll-zoom.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="js/widgetinit.js"></script>
+    <script type="text/javascript">
+        var isProductionMode = false;
+    </script>
+    <script type="text/javascript" src="js/hotspot.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+<body style="margin:0px">
+    <div class="w-hotspot">
+        <div id="zoomWrapper" class="zoomWrapper">
+            <div id="scroller" >                
+                <img class="w-hotspot-img" src="images/base_bw.png" alt="Abdomen" />
+                <div class="imageContainer" style="margin-top:50px;">
+                <div id="zoomContainer" >   
+                        <div class="imagehighlights">
+                            <div id="bwimg" aria-label="Surfaces of Liver" data-img-src='images/base_bw.png' data-id='bw' style='background-image:url("images/base_bw.png")'></div>
+                            <div id="colorimg" aria-label="Surfaces of Liver" tabindex="0" data-img-src='images/base_color.png' data-id='color' style='background-image:url("images/base_color.png")'></div>
+                            <div tabindex="0" data-img-src="images/1.png" data-id="1" style="background-image:url('images/1.png')" aria-label="Coronary ligament "></div>
+                            <div tabindex="0" data-img-src="images/2.png" data-id="2" style="background-image:url('images/2.png')" aria-label="Right lobe of liver"></div>
+                            <div tabindex="0" data-img-src="images/3.png" data-id="3" style="background-image:url('images/3.png')" aria-label="Gallbladder "></div>
+                            <div tabindex="0" data-img-src="images/4.png" data-id="4" style="background-image:url('images/4.png')" aria-label="Quadrate lobe"></div>
+                            <div tabindex="0" data-img-src="images/5.png" data-id="5" style="background-image:url('images/5.png')" aria-label="Common bile duct"></div>
+                            <div tabindex="0" data-img-src="images/6.png" data-id="6" style="background-image:url('images/6.png')" aria-label="Coronary ligament (hepatorenal portion)"></div>
+                            <div tabindex="0" data-img-src="images/7.png" data-id="7" style="background-image:url('images/7.png')" aria-label="Bare area"></div>
+                            <div tabindex="0" data-img-src="images/8.png" data-id="8" style="background-image:url('images/8.png')" aria-label="Inferior vena cava"></div>
+                            <div tabindex="0" data-img-src="images/9.png" data-id="9" style="background-image:url('images/9.png')" aria-label="Caudate lobe "></div>
+                            <div tabindex="0" data-img-src="images/10.png" data-id="10" style="background-image:url('images/10.png')" aria-label="Fissure for ligamentum venosum"></div>
+                            <div tabindex="0" data-img-src="images/11.png" data-id="11" style="background-image:url('images/11.png')" aria-label="Proper hepatic artery"></div>
+                            <div tabindex="0" data-img-src="images/12.png" data-id="12" style="background-image:url('images/12.png')" aria-label="Porta hepatis "></div>
+                            <div tabindex="0" data-img-src="images/13.png" data-id="13" style="background-image:url('images/13.png')" aria-label="Round ligament of liver (ligamentum teres: the obliterated left umbilical vein)"></div>
+                            <div tabindex="0" data-img-src="images/14.png" data-id="14" style="background-image:url('images/14.png')" aria-label="Falciform ligament"></div>
+                            <div tabindex="0" data-img-src="images/15.png" data-id="15" style="background-image:url('images/15.png')" aria-label="Left lobe of liver"></div>
+
+                            <div data-img-src='images/lines.png' data-id='lines' style='background-image:url("images/lines.png")'></div>
+                            <!-- <div data-img-src='images/dots.png' data-id='lines' style='background-image:url("images/dots.png")'></div> -->
+                        </div>
+                        <div class="labelsdata">
+                            <div id="popup_text_1" class="hotspot_popup" style="width: 63px; top: -38px; left: 237px;">Coronary ligament </div>
+                            <div id="popup_text_2" class="hotspot_popup" style="width: 74px; top: 293px; left: 277px;">Right lobe of liver</div>
+                            <div id="popup_text_3" class="hotspot_popup" style="width: 90px; top: 349px; left: 95px;">Gallbladder </div>
+                            <div id="popup_text_4" class="hotspot_popup" style="width: 69px; top: 332px; left: 293px;">Quadrate lobe</div>
+                            <div id="popup_text_5" class="hotspot_popup" style="width: 76px; top: 459px; left: -31px;">Common bile duct</div>
+                            <div id="popup_text_6" class="hotspot_popup" style="width: 92px; top: 506px; left: -42px;">Coronary ligament (hepatorenal portion)</div>
+                            <div id="popup_text_7" class="hotspot_popup" style="width: 78px; top: 600px; left: -33px;">Bare area</div>
+                            <div id="popup_text_8" class="hotspot_popup" style="width: 131px; top: 650px; left: 201px;">Inferior vena cava</div>
+                            <div id="popup_text_9" class="hotspot_popup" style="width: 110px; top: 647px; left: 462px;">Caudate lobe </div>
+                            <div id="popup_text_10" class="hotspot_popup" style="width: 89px; top: 594px; left: 495px;">Fissure for ligamentum venosum</div>
+                            <div id="popup_text_11" class="hotspot_popup" style="width: 54px; top: 505px; left: 537px;">Proper hepatic artery</div>
+                            <div id="popup_text_12" class="hotspot_popup" style="width: 100px; top: 369px; left: 464px;">Porta hepatis </div>
+                            <div id="popup_text_13" class="hotspot_popup" style="width: 150px; top: 236px; left: 414px;">Round ligament of liver (ligamentum teres: the obliterated left umbilical vein)</div>
+                            <div id="popup_text_14" class="hotspot_popup" style="width: 133px; top: 149px; left: 452px;">Falciform ligament</div>
+                            <div id="popup_text_15" class="hotspot_popup" style="width: 67px; top: 100px; left: 475px;">Left lobe of liver</div>
+
+                        </div>
+                        <div class="hotspot">
+                            <div tabindex="0" id="hotspot_1" class="notselected" data-id="1" data-align="Left" data-popup="Coronary ligament " style="position:absolute;left:248px;top:6px">1</div>
+                            <div tabindex="0" id="hotspot_2" class="notselected" data-id="2" data-align="Right" data-popup="Right lobe of liver" style="position:absolute;left:241px;top:296px">2</div>
+                            <div tabindex="0" id="hotspot_3" class="notselected" data-id="3" data-align="Right" data-popup="Gallbladder " style="position:absolute;left:183px;top:326px">3</div>
+                            <div tabindex="0" id="hotspot_4" class="notselected" data-id="4" data-align="Left" data-popup="Quadrate lobe" style="position:absolute;left:247px;top:344px">4</div>
+                            <div tabindex="0" id="hotspot_5" class="notselected" data-id="5" data-align="Left" data-popup="Common bile duct" style="position:absolute;left:54px;top:466px">5</div>
+                            <div tabindex="0" id="hotspot_6" class="notselected" data-id="6" data-align="Left" data-popup="Coronary ligament (hepatorenal portion)" style="position:absolute;left:54px;top:520px">6</div>
+                            <div tabindex="0" id="hotspot_7" class="notselected" data-id="7" data-align="Right" data-popup="Bare area" style="position:absolute;left:54px;top:599px">7</div>
+                            <div tabindex="0" id="hotspot_8" class="notselected" data-id="8" data-align="Right" data-popup="Inferior vena cava" style="position:absolute;left:350px;top:642px">8</div>
+                            <div tabindex="0" id="hotspot_9" class="notselected" data-id="9" data-align="Left" data-popup="Caudate lobe " style="position:absolute;left:427px;top:642px">9</div>
+                            <div tabindex="0" id="hotspot_10" class="notselected" data-id="10" data-align="Right" data-popup="Fissure for ligamentum venosum" style="position:absolute;left:508px;top:557px">10</div>
+                            <div tabindex="0" id="hotspot_11" class="notselected" data-id="11" data-align="Right" data-popup="Proper hepatic artery" style="position:absolute;left:508px;top:512px">11</div>
+                            <div tabindex="0" id="hotspot_12" class="notselected" data-id="12" data-align="Left" data-popup="Porta hepatis " style="position:absolute;left:432px;top:365px">12</div>
+                            <div tabindex="0" id="hotspot_13" class="notselected" data-id="13" data-align="Left" data-popup="Round ligament of liver (ligamentum teres: the obliterated left umbilical vein)" style="position:absolute;left:381px;top:242px">13</div>
+                            <div tabindex="0" id="hotspot_14" class="notselected" data-id="14" data-align="Left" data-popup="Falciform ligament" style="position:absolute;left:421px;top:147px">14</div>
+                            <div tabindex="0" id="hotspot_15" class="notselected" data-id="15" data-align="Left" data-popup="Left lobe of liver" style="position:absolute;left:443px;top:106px">15</div>
+                        </div>
+                </div>
+            </div>          
+        </div>          
+        </div>  
+    </div>
+</body>
+</html>    
+            
