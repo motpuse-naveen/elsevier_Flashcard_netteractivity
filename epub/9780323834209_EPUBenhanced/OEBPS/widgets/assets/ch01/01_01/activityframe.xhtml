@@ -12,41 +12,50 @@
 	<div id="pageHolder">			
 		<iframe src="activity.xhtml" height="800"></iframe>		
 	</div>
-<!--	<script type="text/javascript">
-	    jqnc(document).ready(function(){	    	
-	    	fullscreenify();
-	    });	    
-		function fullscreenify() {			
-	        pageHolder = document.getElementById('pageHolder')
-	        pageHolderWidth = jqnc('#pageHolder').width()
-	        pageHolderHeight = jqnc('#pageHolder').height()
-	        var style = pageHolder.getAttribute('style') || '';
-	        window.addEventListener('resize', function() {
-	            resize(pageHolder);
-	        }, false);
-	        resize(pageHolder, style);
-	    }
+	<script type="text/javascript">
+	    jQuery(document).ready(function () {
+			fullscreenify();
+		});
 
-	    function resize(pageHolder, style) {
-	       var scale = {
-	            x: 1,
-	            y: 1
-	        };
-	        scale.x = ((window.innerWidth) / pageHolderWidth);
-	        scale.y = ((window.innerHeight) / pageHolderHeight);
-	        if (scale.x < scale.y) {
-	            scale = scale.x + ',' + scale.x;
-	        } else {
-	            scale = scale.y + ',' + scale.y;
-	        }
-	        console.log('scale ', scale);
-	        //scale = Number(String(scale.split(','))[0]);
-	        var newWidth = Number(scale.split(','))[0] * pageHolderWidth;
-	        var leftPos = (window.innerWidth - newWidth) / 2;
-	        //scale = Number(scale.split(','))[0];
-	        pageHolder.setAttribute('style', style + ' ' + '-ms-transform-origin: left top; -webkit-transform-origin: left top; -moz-transform-origin: left top; -o-transform-origin: left top; transform-origin: left top; -ms-transform: scale(' + scale + '); -webkit-transform: scale3d(' + scale + ', 1); background: #FFFFFF; position:absolute; top:0px; left:' + leftPos + 'px; -moz-transform: scale(' + scale + '); -o-transform: scale(' + scale + '); transform: scale(' + scale + '); background-color:transparent;');
-	        console.log(((jqnc("body").width() - jqnc("#Menu").width()) / 2) + "px");	        
-	    }
-	</script>-->
+		function fullscreenify() {
+			var pageHolder = document.getElementById('pageHolder');
+
+			if (!pageHolder) {
+				console.error("Element with ID 'pageHolder' not found.");
+				return;
+			}
+
+			var pageHolderWidth = jQuery('#pageHolder').width();
+			var pageHolderHeight = jQuery('#pageHolder').height();
+
+			window.addEventListener('resize', function () {
+				resize(pageHolder, pageHolderWidth, pageHolderHeight);
+			}, false);
+
+			resize(pageHolder, pageHolderWidth, pageHolderHeight);
+		}
+
+		function resize(pageHolder, pageHolderWidth, pageHolderHeight) {
+			var scaleX = window.innerWidth / pageHolderWidth;
+			var scaleY = window.innerHeight / pageHolderHeight;
+			var scale = Math.min(scaleX, scaleY); // Maintain aspect ratio
+
+			var newWidth = scale * pageHolderWidth;
+			var leftPos = (window.innerWidth - newWidth) / 2;
+
+			var newStyle = `
+				transform-origin: left top;
+				transform: scale(${scale});
+				position: absolute;
+				top: 0px;
+				left: ${leftPos}px;
+				background: transparent;
+			`;
+
+			pageHolder.setAttribute('style', newStyle);
+			console.log(`Scale: ${scale}, New Width: ${newWidth}, Left Position: ${leftPos}`);
+		}
+
+	</script>
 </body>
 </html>    
