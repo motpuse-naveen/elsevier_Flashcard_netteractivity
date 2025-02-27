@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+<head>
+<title>Netter&#x0027;s Anatomy Flash Cards</title>
+	<link rel="stylesheet" href="style/style.css"/>
+	<link rel="stylesheet" type="text/css" href="../../../../styles/Elsevier_eBook.css"/>
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+<body style="margin:0px">
+	<div id="pageHolder">			
+		<iframe src="activity.xhtml" height="800"></iframe>		
+	</div>
+	<script type="text/javascript">
+	    jQuery(document).ready(function () {
+			fullscreenify();
+		});
+
+		function fullscreenify() {
+			var pageHolder = document.getElementById('pageHolder');
+
+			if (!pageHolder) {
+				console.error("Element with ID 'pageHolder' not found.");
+				return;
+			}
+
+			var pageHolderWidth = jQuery('#pageHolder').width();
+			var pageHolderHeight = jQuery('#pageHolder').height();
+
+			window.addEventListener('resize', function () {
+				resize(pageHolder, pageHolderWidth, pageHolderHeight);
+			}, false);
+
+			resize(pageHolder, pageHolderWidth, pageHolderHeight);
+		}
+
+		function resize(pageHolder, pageHolderWidth, pageHolderHeight) {
+			var scaleX = window.innerWidth / pageHolderWidth;
+			var scaleY = window.innerHeight / pageHolderHeight;
+			var scale = Math.min(scaleX, scaleY); // Maintain aspect ratio
+
+			var newWidth = scale * pageHolderWidth;
+			var leftPos = (window.innerWidth - newWidth) / 2;
+
+			var newStyle = `
+				transform-origin: left top;
+				transform: scale(${scale});
+				position: absolute;
+				top: 0px;
+				left: ${leftPos}px;
+				background: transparent;
+			`;
+
+			pageHolder.setAttribute('style', newStyle);
+			console.log(`Scale: ${scale}, New Width: ${newWidth}, Left Position: ${leftPos}`);
+		}
+
+	</script>
+</body>
+</html>    
