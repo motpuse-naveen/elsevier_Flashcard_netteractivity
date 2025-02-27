@@ -58,6 +58,8 @@ setTimeout(function(){
         mainframe.setAttribute("allowFullScreen", "true");
         mainframe.setAttribute("frameborder", "0");
         mainframe.setAttribute("scrolling", "no");
+        mainframe.scrolling = "no";
+        mainframe.style.cssText = "overflow: hidden !important; border: none !important;";
 
         // Access the content of the mainframe (Ensure it's from the same origin)
         var mainframeDoc = mainframe.contentDocument || mainframe.contentWindow.document;

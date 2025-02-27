@@ -48,6 +48,11 @@ function addWindowEvents() {
 		jqnc('body').removeClass('show-focus-outlines');
 	});
 }
+var mainframe1 = document.getElementById("mainframe");
+mainframe1.onload = function() {
+    mainframe1.setAttribute("scrolling", "no");
+    mainframe1.scrolling = "no";
+};
 //Add role button to hotspots
 setTimeout(function(){
     // Get the iframe element correctly
@@ -58,7 +63,9 @@ setTimeout(function(){
         mainframe.setAttribute("allowFullScreen", "true");
         mainframe.setAttribute("frameborder", "0");
         mainframe.setAttribute("scrolling", "no");
-
+        mainframe.scrolling = "no";
+        mainframe.style.cssText = "overflow: hidden !important; border: none !important;";
+        
         // Access the content of the mainframe (Ensure it's from the same origin)
         var mainframeDoc = mainframe.contentDocument || mainframe.contentWindow.document;
         

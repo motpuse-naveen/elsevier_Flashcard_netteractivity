@@ -25,36 +25,36 @@
 				return;
 			}
 
-			var pageHolderWidth = jQuery('#pageHolder').width();
-			var pageHolderHeight = jQuery('#pageHolder').height();
+			function resize() {
+				var pageHolderWidth = pageHolder.offsetWidth;
+				var pageHolderHeight = pageHolder.offsetHeight;
 
-			window.addEventListener('resize', function () {
-				resize(pageHolder, pageHolderWidth, pageHolderHeight);
-			}, false);
+				var scaleX = window.innerWidth / pageHolderWidth;
+				var scaleY = window.innerHeight / pageHolderHeight;
+				var scale = Math.min(scaleX, scaleY); // Maintain aspect ratio
 
-			resize(pageHolder, pageHolderWidth, pageHolderHeight);
+				var newWidth = scale * pageHolderWidth;
+				var leftPos = (window.innerWidth - newWidth) / 2;
+
+				// Fix: Use `webkitTransform` for Safari on iOS
+				pageHolder.style.transformOrigin = "left top";
+				pageHolder.style.transform = `scale(${scale})`;
+				pageHolder.style.webkitTransform = `scale(${scale})`; // iOS Fix
+				pageHolder.style.position = "absolute";
+				pageHolder.style.top = "0px";
+				pageHolder.style.left = leftPos + "px";
+				pageHolder.style.background = "transparent";
+
+				console.log(`Scale: ${scale}, New Width: ${newWidth}, Left Position: ${leftPos}`);
+			}
+
+			// Fix: Use `orientationchange` for iPhones
+			window.addEventListener('resize', resize, false);
+			window.addEventListener('orientationchange', resize, false);
+			
+			resize(); // Initial call
 		}
 
-		function resize(pageHolder, pageHolderWidth, pageHolderHeight) {
-			var scaleX = window.innerWidth / pageHolderWidth;
-			var scaleY = window.innerHeight / pageHolderHeight;
-			var scale = Math.min(scaleX, scaleY); // Maintain aspect ratio
-
-			var newWidth = scale * pageHolderWidth;
-			var leftPos = (window.innerWidth - newWidth) / 2;
-
-			var newStyle = `
-				transform-origin: left top;
-				transform: scale(${scale});
-				position: absolute;
-				top: 0px;
-				left: ${leftPos}px;
-				background: transparent;
-			`;
-
-			pageHolder.setAttribute('style', newStyle);
-			console.log(`Scale: ${scale}, New Width: ${newWidth}, Left Position: ${leftPos}`);
-		}
 
 	</script>
 </body>
