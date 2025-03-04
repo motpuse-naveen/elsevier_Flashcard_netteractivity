@@ -5,15 +5,15 @@
 }
 
 html, body {
-  height: 90%;
-}
-body:not(.show-focus-outlines) *:focus, body:not(.show-focus-outlines) [tabindex]:focus {
-  outline: none;
-  outline-style: none;
+  height: 100%;
+  overflow: hidden;
 }
 
-[tabindex]:focus {
-  outline: solid 2px #ffa500;
+#mainframe {
+  /*width: 100% !important;
+  /*height: 100% !important;*/
+  width: 650px;
+  height: 730px;
 }
 
 .h-hotspot > div {
@@ -21,12 +21,6 @@ body:not(.show-focus-outlines) *:focus, body:not(.show-focus-outlines) [tabindex
   height:100%;
 
 }
-
-abbr { 
-  border: none;
-  text-decoration: none;
-}
-
 .sr-only {
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
@@ -39,6 +33,17 @@ abbr {
   position: absolute !important;
   width: 1px !important;
   white-space: nowrap !important; /* 3 */
+}
+.sr-only {
+  position: absolute; /* Take out of normal document flow */
+  width: 1px; /* Collapse width */
+  height: 1px; /* Collapse height */
+  padding: 0; /* Remove any padding */
+  margin: -1px; /* Remove from visible space */
+  overflow: hidden; /* Hide overflowing content */
+  clip: rect(0, 0, 0, 0); /* Clip to an invisible rectangle */
+  white-space: nowrap; /* Prevent text wrapping */
+  border: 0; /* Remove borders */
 }
 .inline-heading{
   display: inline-block;
@@ -65,7 +70,7 @@ abbr {
 }
 
 #mainframe{
-  width: 640px;
+  width: 650px;
   height: 730px;
 }
 
@@ -173,20 +178,22 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
   max-height: 500px;
   overflow: auto;
 }
-.title-wrap{
+.title-wrap {
   display: flex;
-  justify-content: space-between;
+  position: relative;
+  height: 50px;
   align-items: center;
-  width: 100%;
-  /*border: 1px solid black;
-  padding: 10px;*/
+  justify-content: space-between;
 }
+
 .h-hotspot .titleContainer{
-	/*position: absolute;
-  top: -34px;
-  left:60px;*/
+	/*position: absolute;*/
   font-weight: 600;
-  font-size: 18px;
+  /*top: -34px;
+  left:60px;*/
+  font-size: 1.2em;
+  /*padding: 10px 5px;*/
+  margin: 6px;
 }
 .h-hotspot .commentButton{
   position: unset;
@@ -215,22 +222,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
   -transition-delay: 0.1s;
 }
 .h-hotspot .close {
-  background: #606061;
+  background: #333333;
   color: #FFFFFF;
   line-height: 25px;
   position: absolute;
   right: -12px;
   text-align: center;
   top: -10px;
-  width: 24px;
+  width: 30px;
+  height: 30px;
   text-decoration: none;
   font-weight: bold;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px #000;
+  border: 2px solid #333333;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  /*box-shadow: 0 0 10px #000;
   -moz-box-shadow: 0 0 10px #000;
-  -webkit-box-shadow: 0 0 10px #000;
+  -webkit-box-shadow: 0 0 10px #000;*/
   -moz-transition: all 0.1s ease-out;
   -webkit-transition: all 0.1s ease-out;
   -o-transition: all 0.1s ease-out;
@@ -244,12 +253,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
   filter: progid:DXImageTransform.Microsoft.Shadow(color='#000', Direction=135, Strength=3);
 }
 .h-hotspot .close:hover {
-  background: #00d9ff;
+  background: #027DB6;
   -moz-transition: all 0.5s ease-out;
   -webkit-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
   cursor: pointer;
+  border: 2px solid #016F9B;
 }
 .h-hotspot .fineprint {
   font-style: italic;
@@ -259,20 +269,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
 
 .h-hotspot .button {
 	font-size: 17px;
-	background:#FF8200;	
-	width:115px;
-	color:#02142b;
+	background:#027DB6;	
+	/*width: 125px;*/
+	color:#FFFFFF;
   margin: 0px;
   font-size: 20px;
   font-family: 'Arial';
   text-decoration: none;
   font-weight: 200;
   cursor: pointer;
-  padding: 5px 21px 5px;
-  /*position: relative;*/
-  position: unset;
+  padding: 5px 15px;
+  position: absolute;
   margin: 5px 0px;
-  left: 57%;
+  border: 2px solid #016F9B;
+  right: 0;
   box-shadow: 1px 1px 1px #fff;
   -moz-box-shadow: 1px 1px 1px #fff;
   -webkit-box-shadow: 1px 1px 1px #fff;
@@ -282,19 +292,52 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
   text-align: center;
 }
 
+.h-hotspot .commentButton {
+  position: unset;
+}
+
+.h-hotspot .button:hover{
+  background:#016F9B;	
+}
  .h-hotspot .hotspot_popup{
     width: 150px;
     position: absolute;
     display: none;
  }
-.nomargin{
+#nomargin{
   margin: -10px 0px 0px -10px;
 }
 
-@media (max-width: 915px){ 
-  html, body {
-    height: 80%;
+:focus-visible{
+outline: 2px solid #EB6500;
+}
+
+
+iframe.activityframe {
+	overflow: hidden;
+	scrollbar-width: none; /* Firefox */
+	border: none;
+}
+
+iframe.activityframe::-webkit-scrollbar {
+    display: none;
+}
+
+@media (max-width: 915px){
+  /*.h-hotspot .titleContainer {
+    top: -52px;
+    left: 4px;
+  }*/
+  #mainframe{
+    width: 650px;
+    height: 730px;
   }
+  /*
+  .h-hotspot .button {
+    left: 20%;
+  }
+  */
+
   .h-hotspot .modalbg .dialog_body{
     max-height: 250px;
   }
@@ -309,8 +352,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
 
 @media (max-width: 650px){
   #mainframe{
-    width: 500px;
-    height: 566px;
+    width: 480px;
+    height: 628px;
   }
 
   .h-hotspot
@@ -325,29 +368,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
   }
   /*
   .h-hotspot .button {   
-      left: 60%;
-  }
-  .h-hotspot .titleContainer {   
-    left: 10%;
+      left: 73.5%;
   }
   */
+  /*.h-hotspot .titleContainer {   
+    left: 10%;
+  }*/
 }
 
-@media (max-width: 550px){
-  .h-hotspot .button {   
-    /*left: 69%;*/
-  }
-}
-
-@media (max-width: 510px){
+@media (max-width: 511px){
   #mainframe{
-    width: 450px;
-    height: 530px;
+    width: 380px;
+    max-width: 90%;
+    height: 553px;
   }
   .h-hotspot .button { 
-    padding: 5px;
     font-size: 18px;
-    /*left: 52%;*/
+    /*left: 78%;*/
   }
   .h-hotspot
   {
@@ -356,27 +393,49 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
   .h-hotspot .modalbg .dialog_body{
     max-height: 310px;
   }   
-  #firstname { 
+  #firstname {
     background-color: yellow;
   }
-  .h-hotspot .titleContainer {    
-    /*top: -37px;
-    left: 26px;*/
+  /*.h-hotspot .titleContainer {    
+    top: -37px;
+    left: 26px;
+  }*/
+}
+
+@media only screen 
+  and (max-width: 415px){
+  .h-hotspot {
+    height: 100%;
+  }  
+
+  #mainframe{
+    width: 290px;
+    max-width: 90%;
+    height: 450px;
+    margin-top: 20px;
+  }
+
+  .h-hotspot .button { 
+    font-size: 18px;
+    /*left: 24%;*/
   }
 }
 
-@media (max-width: 390px){
-  .h-hotspot .titleContainer {
-    /*top: -52px;
-    left: 4px;*/
-  }
+@media (max-width: 391px){
+  /*.h-hotspot .titleContainer {
+    top: -52px;
+    left: 4px;
+  }*/
   #mainframe {
-    width: 368px;
+    width: 275px;
+    max-width: 90%;
     height: 422px;
   }
+  /*
   .h-hotspot .button {
-    /*left: 71%;*/
+    left: 71%;
   }
+  */
   .h-hotspot .modalbgAnimate .dialog{
     top: 0px;
     margin-top: 15px;
@@ -390,10 +449,36 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
   .dialog hr{margin: 0px;}
 }
 
+@media only screen 
+  and (max-width: 375px) { 
+  .h-hotspot
+  {
+    height: 100%;
+  }
+  /*.h-hotspot .titleContainer {
+    font-size: 15px;
+    width: 270px;
+  }*/
+
+  #mainframe{
+    width: 265px;
+    max-width: 90%;
+    height: 450px;
+    margin-top: 20px;
+  }
+
+  .h-hotspot .button { 
+    font-size: 15px;
+    /*left: 74%;*/
+  }
+      
+}
+
 @media (max-width: 340px){ 
   #mainframe{
-    width: 100%;
-    height: 303px;
+    width: 250;
+    max-width: 90%;
+    height: 308px;
   }
   .h-hotspot .titleContainer {
     font-size: 15px;
@@ -401,8 +486,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
     margin-top: 9px;
   } 
   .h-hotspot .button{
-    /*left: 51%;*/
+    /*left: 62%;*/
     font-size: 15px;
+    bottom: 5px;
   }  
   .h-hotspot
   {
@@ -415,108 +501,49 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
 } 
 
 @media only screen 
-  and (max-width: 320px)  
-  and (-webkit-min-device-pixel-ratio: 2), 
-  only screen 
-  and (max-width: 320px)  
-  and (min-resolution: 192dpi) {
+  and (max-width: 320px) {
   .h-hotspot
   {
     height: 100%;
   }
-  .h-hotspot .titleContainer {
+  /*.h-hotspot .titleContainer {
     font-size: 15px;
     width: 270px;
-  }
+  }*/
+
   #mainframe{
-    width: 290px;
-    height: 450px;
+    width: 220px;
+    max-width: 100%;
     margin-top: 20px;
   }
   .h-hotspot .button { 
-    padding: 5px;
     font-size: 15px;
-    /*left: 54%;*/
+    /*left: 62%;*/
   }
 }
 
+
+
+
+
+/*
 @media only screen 
-  and (max-width: 375px) 
-  and (-webkit-min-device-pixel-ratio: 2),
-  only screen 
-  and (max-width: 375px) 
-  and (min-resolution: 192dpi) {
-  .h-hotspot
-  {
-    height: 100%;
-  }
-  .h-hotspot .titleContainer {
-    font-size: 15px;
-    width: 270px;
-  }
-
-  #mainframe{
-    width: 350px;
-    height: 450px;
-    margin-top: 20px;
-  }
-
-  .h-hotspot .button { 
-    padding: 5px;
-    font-size: 15px;
-    /*left: 49%;*/
-  }   
-}
-
-@media only screen 
-  and (max-width: 414px)  
-  and (-webkit-min-device-pixel-ratio: 3),
-  only screen 
-  and (max-width: 414px)  
-  and (min-resolution: 288dpi) {
-  .h-hotspot
-  {
-    height: 100%;
-  }  
-
-  .h-hotspot .titleContainer {
-    font-size: 18px;
-    /*top: -40px;
-    left: 3px;*/
-    width: 360px;
-  }
-
-  #mainframe{
-    width: 380px;
-    height: 450px;
-    margin-top: 20px;
-  }
-
-  .h-hotspot .button { 
-    padding: 5px;
-    font-size: 18px;
-    /*left: 24%;*/
-  }
-}
-
-@media only screen 
-  and (min-width: 768px) 
-  and (max-width: 1024px) {
+  and (min-device-width: 768px)  
+  and (-webkit-min-device-pixel-ratio: 1) {
   #mainframe{
     width: 640px;
     height: 730px;
   }
   .h-hotspot .titleContainer{
-    /*position: absolute;
-    top: -34px;
-    left:60px;
-    width: 100%;*/
+    position: absolute;
+    width: 100%;
     font-weight: 600;
+    
     font-size: 20px;
   }
   .h-hotspot .button { 
-    padding: 5px;
     font-size: 20px;
-    /*left: 79%*/
+    
   }
 }
+*/

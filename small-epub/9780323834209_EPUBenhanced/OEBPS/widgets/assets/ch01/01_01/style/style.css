@@ -175,27 +175,29 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
   -webkit-box-shadow: 0 0 10px #000;
 }
 .h-hotspot .modalbg .dialog_body {
-  max-height: 500px;
+  height: 500px;
+  max-height: 80%;
   overflow: auto;
 }
-.title-wrap{
-  display: block;
+.title-wrap {
   display: flex;
   position: relative;
-  height: 40px;
-  align-items: center;
-  position: relative;
   height: 50px;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .h-hotspot .titleContainer{
-	position: absolute;
+	/*position: absolute;*/
   font-weight: 600;
   /*top: -34px;
   left:60px;*/
-  font-size: 1.5em;
+  font-size: 1.2em;
   /*padding: 10px 5px;*/
   margin: 6px;
+}
+.h-hotspot .commentButton{
+  position: unset;
 }
 .h-hotspot .modalbg .dialog .ie7 {
   filter: progid:DXImageTransform.Microsoft.Shadow(color='#000', Direction=135, Strength=3);
@@ -290,6 +292,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', end
     border-radius: 5px;
   text-align: center;
 }
+
+.h-hotspot .commentButton {
+  position: unset;
+}
+
 .h-hotspot .button:hover{
   background:#016F9B;	
 }
@@ -333,7 +340,8 @@ iframe.activityframe::-webkit-scrollbar {
   */
 
   .h-hotspot .modalbg .dialog_body{
-    max-height: 250px;
+    max-height: 400px;
+    max-height: 80%;
   }
   .dialog #dialogTitle{
     margin-block-start: 0.3em;
@@ -346,7 +354,7 @@ iframe.activityframe::-webkit-scrollbar {
 
 @media (max-width: 650px){
   #mainframe{
-    width: 552px;
+    width: 480px;
     height: 628px;
   }
 
@@ -358,7 +366,8 @@ iframe.activityframe::-webkit-scrollbar {
     top: -142px;
   }
   .h-hotspot .modalbg .dialog_body {
-    max-height: 190px;
+    height: 350px;
+    max-height: 80%;
   }
   /*
   .h-hotspot .button {   
@@ -372,7 +381,8 @@ iframe.activityframe::-webkit-scrollbar {
 
 @media (max-width: 511px){
   #mainframe{
-    width: 486px;
+    width: 380px;
+    max-width: 90%;
     height: 553px;
   }
   .h-hotspot .button { 
@@ -384,9 +394,10 @@ iframe.activityframe::-webkit-scrollbar {
     height: 400px;
   }
   .h-hotspot .modalbg .dialog_body{
-    max-height: 310px;
+    height: 320px;
+    max-height: 80%;
   }   
-  #firstname { 
+  #firstname {
     background-color: yellow;
   }
   /*.h-hotspot .titleContainer {    
@@ -396,23 +407,14 @@ iframe.activityframe::-webkit-scrollbar {
 }
 
 @media only screen 
-  and (max-width: 415px)  {
-  .h-hotspot
-  {
+  and (max-width: 415px){
+  .h-hotspot {
     height: 100%;
   }  
 
-  /*
-  .h-hotspot .titleContainer {
-    font-size: 18px;
-    top: -40px;
-    left: 3px;
-    width: 360px;
-  }
-  */
-
   #mainframe{
-    width: 380px;
+    width: 310px;
+    max-width: 90%;
     height: 450px;
     margin-top: 20px;
   }
@@ -429,7 +431,8 @@ iframe.activityframe::-webkit-scrollbar {
     left: 4px;
   }*/
   #mainframe {
-    width: 368px;
+    width: 325px;
+    max-width: 90%;
     height: 422px;
   }
   /*
@@ -442,7 +445,8 @@ iframe.activityframe::-webkit-scrollbar {
     margin-top: 15px;
   }
   .h-hotspot .modalbg .dialog_body{
-    max-height: 115px;
+    height: 315px;
+    max-height: 80%;
   }
   .dialog #dialogTitle{
     margin: 0px;
@@ -462,7 +466,8 @@ iframe.activityframe::-webkit-scrollbar {
   }*/
 
   #mainframe{
-    width: 350px;
+    width: 300px;
+    max-width: 90%;
     height: 450px;
     margin-top: 20px;
   }
@@ -476,7 +481,8 @@ iframe.activityframe::-webkit-scrollbar {
 
 @media (max-width: 340px){ 
   #mainframe{
-    width: 100%;
+    width: 300;
+    max-width: 90%;
     height: 308px;
   }
   .h-hotspot .titleContainer {
@@ -495,7 +501,8 @@ iframe.activityframe::-webkit-scrollbar {
   }
 
   .h-hotspot .modalbg .dialog_body{
-    max-height: 166px;
+    height: 300px;
+    max-height: 80%;
   }
 } 
 
@@ -511,7 +518,8 @@ iframe.activityframe::-webkit-scrollbar {
   }*/
 
   #mainframe{
-    width: 290px;
+    width: 280px;
+    max-width: 100%;
     margin-top: 20px;
   }
   .h-hotspot .button { 

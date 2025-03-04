@@ -10,50 +10,71 @@
 </head>
 <body style="margin:0px">
 	<div id="pageHolder">			
-		<iframe src="activity.xhtml" height="800"></iframe>		
+		<!--<iframe src="activity.xhtml" height="800"></iframe>-->	
+		<iframe id='framecontainer' class="activityframe" src="activity.xhtml" aria-label="activity frame"></iframe>	
 	</div>
 	<script type="text/javascript">
-	    jQuery(document).ready(function () {
+	    jqnc(document).ready(function () {
 			fullscreenify();
 		});
 
 		function fullscreenify() {
-			var pageHolder = document.getElementById('pageHolder');
+			var framecontainer = document.getElementById("framecontainer");
+			if (framecontainer) {
+				framecontainer.setAttribute("frameborder", "0");
+				framecontainer.style.border = "none";
 
+				// Apply "scrolling=no" only if NOT in mobile portrait mode
+				if (!(window.innerWidth &lt; 430)) {
+					framecontainer.setAttribute("scrolling", "no");
+				} else {
+					framecontainer.removeAttribute("scrolling"); // Ensure scrolling is enabled for mobile portrait
+				}
+			}
+
+			var pageHolder = document.getElementById("pageHolder");
 			if (!pageHolder) {
-				console.error("Element with ID 'pageHolder' not found.");
+				console.error("Error: #pageHolder element not found.");
 				return;
 			}
 
-			var pageHolderWidth = jQuery('#pageHolder').width();
-			var pageHolderHeight = jQuery('#pageHolder').height();
+			var pageHolderWidth = jqnc("#pageHolder").width();
+			var pageHolderHeight = jqnc("#pageHolder").height();
+			var style = pageHolder.getAttribute("style") || "";
 
-			window.addEventListener('resize', function () {
-				resize(pageHolder, pageHolderWidth, pageHolderHeight);
-			}, false);
+			function resize() {
+				var scaleX = window.innerWidth / pageHolderWidth;
+				var scaleY = window.innerHeight / pageHolderHeight;
+				var scale = Math.min(scaleX, scaleY); // Ensure proportional scaling
 
-			resize(pageHolder, pageHolderWidth, pageHolderHeight);
-		}
+				var newWidth = scale * pageHolderWidth;
+				var leftPos = (window.innerWidth - newWidth) / 2;
 
-		function resize(pageHolder, pageHolderWidth, pageHolderHeight) {
-			var scaleX = window.innerWidth / pageHolderWidth;
-			var scaleY = window.innerHeight / pageHolderHeight;
-			var scale = Math.min(scaleX, scaleY); // Maintain aspect ratio
+				pageHolder.style.cssText = `
+					${style}
+					-ms-transform-origin: left top;
+					-webkit-transform-origin: left top;
+					-moz-transform-origin: left top;
+					-o-transform-origin: left top;
+					transform-origin: left top;
+					-ms-transform: scale(${scale});
+					-webkit-transform: scale3d(${scale}, ${scale}, 1);
+					-moz-transform: scale(${scale});
+					-o-transform: scale(${scale});
+					transform: scale(${scale});
+					background: #FFFFFF;
+					position: absolute;
+					top: 0px;
+					left: ${leftPos}px;
+					background-color: transparent;
+				`;
 
-			var newWidth = scale * pageHolderWidth;
-			var leftPos = (window.innerWidth - newWidth) / 2;
+				console.log(`Scale: ${scale}, Left Position: ${leftPos}px`);
+			}
 
-			var newStyle = `
-				transform-origin: left top;
-				transform: scale(${scale});
-				position: absolute;
-				top: 0px;
-				left: ${leftPos}px;
-				background: transparent;
-			`;
-
-			pageHolder.setAttribute('style', newStyle);
-			console.log(`Scale: ${scale}, New Width: ${newWidth}, Left Position: ${leftPos}`);
+			window.addEventListener("resize", resize, false);
+			window.addEventListener("orientationchange", resize); // Handle device rotation
+			resize(); // Initial resize
 		}
 
 	</script>
